@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --theme-background: #0f1015;
+  --theme-background-transparent: rgba(15, 16, 21, 0.8);
+  --theme-text: #efefef;
+  --theme-text_light: #bdbdbd;
+  --theme-text_light-hover: #fff;
+  --layout_main_code--color: #1a7abf;
+
+  --transition: 300ms;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+  font-size: 16px;
+  overflow: overlay;
+
+  overflow-x: hidden !important;
+}
+
+html, body { max-width: 100%; }
+html { scroll-behavior: smooth; }
+
+.initial-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial-container::after {
+  content: "";
+  top:0;
+  left: 0;
+  position: absolute;
+  background-color: var(--theme-background-transparent);
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lux-logo {
+  max-width: 130px;
+  padding: 0.5rem 0 0 1rem;
+}
+
+.conatiner-links { padding: 0 2rem; }
+
+.nav-links {
+  padding: 0.25em;
+  margin: 0 0.25em;
+}
+
+a { color: var(--theme-text); }
+
+a, a:visited, a:link, a:active { text-decoration: none; }
+
+a:hover { color: var(--theme-text_light-hover); }
+
+.nav-links:hover { text-decoration: underline; }
+
+.scrolling a:hover { color: var(--layout_main_code--color); }
+
+.scrolling a { color: var(--theme-background); }
+
+.scrolling {
+  background-color: var(--theme-text);
+  box-shadow: 0 5px 10px var(--theme-background);
+}
+
+.navbar {
+  transition: 250ms;
+  animation: 1s ease-out 0s 1 slideTopDown;
+}
+
+@keyframes slideTopDown {
+  0% { transform: translateY(-200%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slideDownTop {
+  0% { transform: translateY(65vh); }
+  100% { transform: translateY(0); }
+}
+
+.sv-info {
+  text-align: center;
+  transition: 500ms;
+  animation: 1s ease-out 0s 1 slideDownTop;
+}
+
+h1 {
+  font-size: 4rem;
+  text-decoration: underline var(--layout_main_code--color) 6px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-decoration: underline var(--layout_main_code--color) 4px;
+}
+
+button, .button-vip {
+  font-size: 1.1em;
+  background-color: transparent;
+  color: var(--layout_main_code--color);
+  border: 2px solid var(--layout_main_code--color);
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+
+  transition: color var(--transition), background-color var(--transition);
+}
+
+button:hover, .button-vip:hover {
+  color: var(--theme-text_light-hover);
+  background-color: var(--layout_main_code--color);
+}
+
+.vip {
+  padding: 3rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sv-info-subtitle {
+  padding-bottom: 2rem;
+}
+
+.vip-table {
+  padding-top: 2rem;
+  width: 70vw;
+  max-width: 1000px;
+}
+
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #efefef55;
+}
+
+tr { transition: background-color var(--transition); }
+
+tr:hover { background-color: #efefef19; }
+
+th {
+  background-color: var(--layout_main_code--color);
+  padding: 0.75rem 0.5rem;
+}
+
+.info-normal, .info-vip { text-align: center; }
+
+.old-price { text-decoration: 2px line-through red; }
+
+.value-pos {
+  color: rgb(0, 178, 0);
+  font-size: 1.1em;
+}
+
+.value-neg { color: rgb(255, 80, 80); }
+
+.end-timer { padding: 1rem; }
+
+.buy-vip-title {padding-top: 1rem;}
+
+.buy-vip-subtitle { padding: 0 2rem}
+
+.buy-vip {
+  min-height: 300px;
+
+  margin: 3rem 0 0 0;
+  text-align: center;
+
+  border: 1px solid var(--layout_main_code--color);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between
+}
+
+.container-timer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-vip-buy {
+  margin-top: 1rem;
+  border-radius: 0 0 6px 6px;
+  background-color: var(--layout_main_code--color);
+}
+.container-vip-buy { width: 100%; }
+
+.container-timer {
+  padding: 4rem 0.5rem;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 3.0rem;
+}
+
+footer {
+  border-top: 1px solid var(--layout_main_code--color);
+  padding: 0 2rem;
+  background-color: var(--theme-background);
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author {
+  color: var(--layout_main_code--color);
+}
+
+/* ADJUST THE SCROLBAR */
+  /* width */
+  ::-webkit-scrollbar { width: 6px; }
+  /* Track */
+  ::-webkit-scrollbar-track { background: transparent; }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1a7abf40;
+    border-radius: 16px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 1); }
+/* ------------------ */
