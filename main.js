@@ -35,11 +35,13 @@ function changeTime() {
 
   // ñ tem promo na segunda nem na terça
   if (weekday == 1 || weekday == 2) {
-    const containerVipBuy = document.querySelector(".container-vip-buy-link")
+    const containerVipBuy = document.querySelectorAll(".container-vip-buy-link")
     const countdownTimer = document.querySelector(".container-timer")
     countdownTimer.remove()
 
-    containerVipBuy.innerHTML = `<h2 class="new-price end-timer">R$ 15,99</h2>`
+    containerVipBuy[0].innerHTML = `<h2 class="new-price end-timer">R$ 15,99</h2>`
+    containerVipBuy[1].innerHTML = `<h2 class="new-price end-timer">R$ 39,99</h2>`
+
     clearInterval(intervalId)
     return;
   } else {

@@ -12,6 +12,7 @@
   --theme-text_light: #bdbdbd;
   --theme-text_light-hover: #fff;
   --layout_main_code--color: #1a7abf;
+  --transparent-black: #efefef55;
 
   --transition: 300ms;
 }
@@ -24,6 +25,10 @@ body {
   overflow: overlay;
 
   overflow-x: hidden !important;
+}
+
+@media screen and (max-width: 960px) {
+  body { font-size: 14px; }
 }
 
 html, body { max-width: 100%; }
@@ -133,15 +138,15 @@ a:hover { color: var(--theme-text_light-hover); }
   animation: 1s ease-out 0s 1 slideDownTop;
 }
 
-h1 {
-  font-size: 4rem;
-  text-decoration: underline var(--layout_main_code--color) 6px;
-}
+.underline { text-decoration: underline var(--layout_main_code--color) 6px; }
 
-h2 {
-  font-size: 2.5rem;
-  text-decoration: underline var(--layout_main_code--color) 4px;
-}
+h1 { font-size: 4em; }
+
+h2 { font-size: 2.5em;}
+
+h3 { font-size: 2.0em; }
+
+.countdown-list { padding-bottom: 1rem; }
 
 button, .button-vip {
   font-size: 1.1em;
@@ -176,11 +181,19 @@ button:hover, .button-vip:hover {
   padding-top: 2rem;
   width: 70vw;
   max-width: 1000px;
+  padding-bottom: 1rem;
+}
+
+.product-info {
+  margin-top: 2rem;
+  border: 1px solid var(--layout_main_code--color);
+  border-bottom: 0px;
+  border-radius: 8px;
 }
 
 td {
   padding: 0.5rem;
-  border-bottom: 1px solid #efefef55;
+  border-bottom: 1px solid var(--transparent-black);
 }
 
 tr { transition: background-color var(--transition); }
@@ -205,14 +218,28 @@ th {
 
 .end-timer { padding: 1rem; }
 
-.buy-vip-title {padding-top: 1rem;}
+.buy-vip-title { padding: 1rem 1rem 0 1rem;}
 
 .buy-vip-subtitle { padding: 0 2rem}
 
-.buy-vip {
-  min-height: 300px;
+.buy-vip-container {
+  width: 70vw;
+  max-width: 1000px;
 
-  margin: 3rem 0 0 0;
+  display: flex;
+  gap: 1.5rem;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-vip {
+  height: 100%;
+  gap: 1rem;
+
+  flex-grow: 1;
+
   text-align: center;
 
   border: 1px solid var(--layout_main_code--color);
@@ -224,20 +251,15 @@ th {
   justify-content: space-between
 }
 
-.container-timer {
-  margin: 0 auto;
-  text-align: center;
-}
-
 .container-vip-buy {
-  margin-top: 1rem;
   border-radius: 0 0 6px 6px;
   background-color: var(--layout_main_code--color);
 }
 .container-vip-buy { width: 100%; }
 
 .container-timer {
-  padding: 4rem 0.5rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 li {
