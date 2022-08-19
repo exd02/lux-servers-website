@@ -94,3 +94,8 @@ var intervalId = window.setInterval(function(){
   changeTime()
 }, 1000);
 
+/* PRELOADER */
+const preloader = document.querySelector(".preloader");
+window.addEventListener("load", function () {
+  preloader.remove()
+});
