@@ -175,7 +175,7 @@ h2 { font-size: 2.5em;}
 
 h3 { font-size: 2.0em; }
 
-.countdown-list { padding-bottom: 1rem; }
+.countdown-list, .commands-title { padding-bottom: 1rem; }
 
 button, .button-vip {
   font-size: 1.1em;
@@ -311,6 +311,19 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.container-center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-commands {
+  width: 90vw;
+  max-width: 1200px;
 }
 
 .author {
