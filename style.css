@@ -313,6 +313,10 @@ footer {
   justify-content: space-between;
 }
 
+.l-side {
+  text-align: center;
+}
+
 .container-center {
   height: 100vh;
   display: flex;
